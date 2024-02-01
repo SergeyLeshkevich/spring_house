@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "b5c1770f-c71c-4152-98d3-e2c34053dce6",
+		"name": "task-spring-hibernate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28834266"
+	},
+	"item": [
+		{
+			"name": "person",
+			"item": [
+				{
+					"name": "get person",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/persons/5c3a267c-3175-4826-a7d1-488782a62d98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"5c3a267c-3175-4826-a7d1-488782a62d98"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_page_people",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/persons/all?pageSize=3&numberPage=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"all"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "numberPage",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "udate_person",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John1\",\r\n    \"surname\": \"Doe1\",\r\n    \"sex\": \"MALE\",\r\n    \"passport\": {\r\n        \"series\": \"A2\",\r\n        \"number\": \"123456\"\r\n    },\r\n    \"house_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/persons/5ec11abf-be3d-440d-893b-d6471c2d4c2b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"5ec11abf-be3d-440d-893b-d6471c2d4c2b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_person",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/persons/aac301d6-02d9-4622-b4db-8dc72de831a7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"aac301d6-02d9-4622-b4db-8dc72de831a7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John_new\",\r\n    \"surname\": \"Doe_new\",\r\n    \"sex\": \"MALE\",\r\n    \"passport\": {\r\n        \"series\": \"AC\",\r\n        \"number\": \"123456\"\r\n    },\r\n    \"hose_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/persons?houseUuid=5e213358-c398-49be-945b-e2b32a0c4a41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons"
+							],
+							"query": [
+								{
+									"key": "houseUuid",
+									"value": "5e213358-c398-49be-945b-e2b32a0c4a41"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_people_by_uuid_house",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/persons/houses/5e213358-c398-49be-945b-e2b32a0c4a41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"persons",
+								"houses",
+								"5e213358-c398-49be-945b-e2b32a0c4a41"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "house",
+			"item": [
+				{
+					"name": "get_house",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/houses/5e213358-c398-49be-945b-e2b32a0c4a41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"houses",
+								"5e213358-c398-49be-945b-e2b32a0c4a41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_page_houses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/houses?pageSize=3&numberPage=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"houses"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "numberPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_house",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/houses/a541402f-d291-48e8-9b34-78c925621749",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"houses",
+								"a541402f-d291-48e8-9b34-78c925621749"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_house",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "/houses/1234-5678-9012-3456?uuid_registered_people=9876-5432-1098-7654,8765-4321-0987-6543",
+							"path": [
+								"houses",
+								"1234-5678-9012-3456"
+							],
+							"query": [
+								{
+									"key": "uuid_registered_people",
+									"value": "9876-5432-1098-7654,8765-4321-0987-6543"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_house",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"area\": \"Downtown\",\r\n    \"country\": \"Country3\",\r\n    \"city\": \"City3\",\r\n    \"street\": \"Street3\",\r\n    \"number\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/houses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"houses"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add_owner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/houses/tenants?house_uuid=1f5e112c-ebdc-4935-ae07-ee05eb1a2de5&person_uuid=5c3a267c-3175-4826-a7d1-488782a62d98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"houses",
+								"tenants"
+							],
+							"query": [
+								{
+									"key": "house_uuid",
+									"value": "1f5e112c-ebdc-4935-ae07-ee05eb1a2de5"
+								},
+								{
+									"key": "person_uuid",
+									"value": "5c3a267c-3175-4826-a7d1-488782a62d98"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"country\":\"Country124\"        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/houses/5e213358-c398-49be-945b-e2b32a0c4a41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"houses",
+								"5e213358-c398-49be-945b-e2b32a0c4a41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-house_by_uuid_owner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/houses/owners/5c3a267c-3175-4826-a7d1-488782a62d98",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"houses",
+								"owners",
+								"5c3a267c-3175-4826-a7d1-488782a62d98"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "history",
+			"item": [
+				{
+					"name": "get_house_owners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/history/houses/owners/5c3a267c-3175-4826-a7d1-488782a62d98?pageSize=2&numberPage=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"history",
+								"houses",
+								"owners",
+								"5c3a267c-3175-4826-a7d1-488782a62d98"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "2"
+								},
+								{
+									"key": "numberPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_owners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/history/people/owners/5e213358-c398-49be-945b-e2b32a0c4a41?pageSize=3&numberPage=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"history",
+								"people",
+								"owners",
+								"5e213358-c398-49be-945b-e2b32a0c4a41"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "numberPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_house_tenants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/history/houses/tenants/5c3a267c-3175-4826-a7d1-488782a62d98?pageSize=2&numberPage=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"history",
+								"houses",
+								"tenants",
+								"5c3a267c-3175-4826-a7d1-488782a62d98"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "2"
+								},
+								{
+									"key": "numberPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_tenants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/history/people/tenants/5e213358-c398-49be-945b-e2b32a0c4a41?pageSize=3&numberPage=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"history",
+								"people",
+								"tenants",
+								"5e213358-c398-49be-945b-e2b32a0c4a41"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "3"
+								},
+								{
+									"key": "numberPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
